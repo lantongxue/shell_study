@@ -1,20 +1,20 @@
 #!/bin/bash
 
-echo -e """
+echo -e """\033[41m
 欢迎使用 Shadowsocks+KCP 一键脚本
 目前仅在 centos7.7 、ubuntu18.04 系统上测试通过，其他发行版请自测
 
 本脚本仅供学习研究使用，切勿用于非法用途，造成的一切后果由使用者承担！
+\033[0m"""
 
-"""
 read -p "是否继续？[Y/n]" continue
-if [ $continue != "Y" ] && [ $continue != "y" ]
+if [ $continue != "Y" ] && [ $continue != "y" ]; then
     exit
 fi
 
 user=$(whoami)
 if [ "$user" != "root" ]; then
-    echo -e "\033[41m请使用root权限运行该脚本[0m"
+    echo -e "\033[41m请使用root权限运行该脚本\033[0m"
     exit
 fi
 
